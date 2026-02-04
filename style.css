@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+body {
+    background-color: #F8F4E3; /* Fondo crema suave */
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #5D4037; /* Café oscuro para el texto principal */
+    overflow: hidden; /* Para evitar scroll por el carrusel */
+}
+
+.main-wrapper {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.design-showcase {
+    flex: 1.5; /* Más espacio para la muestra de diseño */
+    background-color: #FDFD96; /* Amarillo pastel */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.design-showcase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+}
+
+.welcome-text {
+    text-align: center;
+    color: #8B4513; /* Café para el texto de bienvenida */
+    z-index: 2;
+    margin-top: 20px;
+}
+
+.welcome-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.welcome-text p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Carrusel de imágenes mejorado */
+.slider {
+    width: 100%;
+    max-width: 400px; /* Ajusta el tamaño del carrusel */
+    height: 250px;
+    overflow: hidden;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.slide-track {
+    display: flex;
+    width: calc(300px * 8); /* Ancho total de las imágenes */
+    animation: scroll-carousel 20s linear infinite; /* Animación más lenta */
+    height: 100%;
+}
+
+.slide {
+    width: 300px;
+    height: : 250px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%; /* Asegura que la imagen no ocupe todo el slide para un pequeño margen */
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 2px solid #EADDCA
+}
+
+@keyframes scroll-carousel {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-300px * 4)); } /* Desplaza 4 imágenes */
+}
+
+
+.login-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #FFF8E1; /* Un blanco-amarillo muy claro para el fondo del login */
+}
+
+.login-box, .register-box {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+    border: 1px solid #EADDCA; /* Borde sutil */
+}
+
+.company-logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #8B4513; /* Café oscuro */
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+}
+
+p {
+    color: #A0522D; /* Café medio */
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #A0522D;
+    font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: calc(100% - 24px); /* Ajuste para el padding */
+    padding: 12px;
+    border: 1px solid #F0E6D2; /* Borde más suave */
+    border-radius: 8px;
+    background-color: #FFFCF5; /* Fondo del input muy claro */
+    font-size: 1rem;
+    color: #5D4037;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #F4D03F; /* Borde amarillo al enfocar */
+    box-shadow: 0 0 8px rgba(244, 208, 63, 0.2);
+    outline: none;
+}
+
+.login-button, .register-button {
+    width: 100%;
+    padding: 14px;
+    background-color: #F4D03F; /* Amarillo botón */
+    border: none;
+    border-radius: 8px;
+    color: #5D4037; /* Texto café oscuro */
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
+}
+
+.login-button:hover, .register-button:hover {
+    background-color: #E6B02B; /* Amarillo más oscuro al pasar el ratón */
+    transform: translateY(-2px);
+}
+
+.forgot-password, .register-prompt, .login-prompt {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #A0522D;
+}
+
+.forgot-password a, .register-prompt a, .login-prompt a {
+    color: #8B4513; /* Link en café oscuro */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.forgot-password a:hover, .register-prompt a:hover, .login-prompt a:hover {
+    color: #D4AC0D; /* Amarillo al pasar el ratón */
+}
+
+.error-msg {
+    color: #E74C3C;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .main-wrapper {
+        flex-direction: column;
+        width: 95%;
+    }
+    .design-showcase {
+        padding: 20px;
+        order: -1; /* Muestra el diseño arriba en móviles */
+    }
+    .login-container {
+        padding: 30px;
+    }
+    .welcome-text h1 {
+        font-size: 2rem;
+    }
+    .welcome-text p {
+        font-size: 0.9rem;
+    }
+    .slider {
+        height: 180px;
+    }
+    .slide-track {
+        width: calc(250px * 8);
+        animation: scroll-carousel-mobile 18s linear infinite;
+    }
+    .slide {
+        width: 250px;
+    }
+    @keyframes scroll-carousel-mobile {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-250px * 4)); }
+    }
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Citas - Elegante</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-circle">S</div>
+            <h2>SENA<span>Citas</span></h2>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="active"><span>📅</span> Agendar Cita</a>
+            <a href="#"><span>👤</span> Mi Cuenta</a>
+            <a href="#"><span>❓</span> Ayuda y Soporte</a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="index.html" class="logout-link">Cerrar Sesión</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-bar">
+            <h1>Panel de Agendamiento</h1>
+            <div class="user-info">
+                <span>Bienvenido, <strong>Usuario</strong></span>
+                <img src="https://via.placeholder.com/40" alt="Avatar">
+            </div>
+        </header>
+
+        <section class="content-wrapper">
+            <div class="glass-card">
+                <div class="card-intro">
+                    <h2>Reserva tu Espacio</h2>
+                    <p>Selecciona el profesional y el horario que mejor se adapte a ti.</p>
+                </div>
+
+                <form id="appointmentForm" class="elegant-form">
+                    <div class="form-grid">
+                        <div class="input-box">
+                            <label>Fecha</label>
+                            <input type="date" id="appointmentDate" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Hora preferida</label>
+                            <input type="time" id="appointmentTime" required>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Profesional encargado</label>
+                        <select id="specialist" required>
+                            <option value="">Selecciona un experto...</option>
+                            <option value="1">Analista de Diseño - Juan</option>
+                            <option value="2">Consultora Senior - María</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Motivo del encuentro</label>
+                        <textarea id="reason" placeholder="Escribe aquí los detalles..." rows="4" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Confirmar Cita</button>
+                </form>
+                <div id="confirmMessage"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+}

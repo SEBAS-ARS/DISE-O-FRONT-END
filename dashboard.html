@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Citas - SENA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS INTEGRADO PARA EVITAR FALLOS DE RUTA */
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fdfcf0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* BARRA LATERAL */
+        .sidebar {
+            width: 280px;
+            background-color: #5D4037; /* Café Chocolate */
+            color: white;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+        }
+
+        .sidebar h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #F4D03F;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .sidebar nav a {
+            color: #EADDCA;
+            text-decoration: none;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: block;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .sidebar nav a:hover, .sidebar nav a.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: #F4D03F;
+        }
+
+        /* CONTENIDO PRINCIPAL */
+        .main-content {
+            margin-left: 280px;
+            padding: 50px;
+            flex-grow: 1;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .top-bar h1 {
+            font-family: 'Playfair Display', serif;
+            color: #5D4037;
+            font-size: 2.2rem;
+        }
+
+        /* TARJETA ELEGANTE */
+        .glass-card {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            max-width: 700px;
+            border: 1px solid #f0e6d2;
+        }
+
+        .glass-card h2 {
+            font-family: 'Playfair Display', serif;
+            color: #8B4513;
+            margin-top: 0;
+        }
+
+        /* FORMULARIO */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: #A0522D;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        input, select, textarea {
+            padding: 12px;
+            border: 1px solid #EADDCA;
+            border-radius: 10px;
+            background: #fffcf8;
+            font-family: 'Montserrat', sans-serif;
+            outline: none;
+        }
+
+        input:focus { border-color: #F4D03F; }
+
+        .full-width { grid-column: span 2; }
+
+        .btn-confirm {
+            grid-column: span 2;
+            background-color: #F4D03F;
+            color: #5D4037;
+            border: none;
+            padding: 18px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-confirm:hover {
+            background-color: #5D4037;
+            color: white;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2>CITAS</h2>
+        <nav>
+            <a href="#" class="active">📅 Agendar Cita</a>
+            <a href="#">👤 Mi Cuenta</a>
+            <a href="#">❓ Ayuda</a>
+            <a href="index.html" style="margin-top: 50px; color: #ff9999;">Cerrar Sesión</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-bar">
+            <h1>Panel de Agendamiento</h1>
+            <div style="color: #8B4513;">Bienvenido <strong> </strong></div>
+        </header>
+
+        <section class="glass-card">
+            <h2>Reserva tu Espacio</h2>
+            <p style="color: #a38b7a; margin-bottom: 30px;">Selecciona los detalles para tu cita técnica o de diseño.</p>
+
+            <form id="appointmentForm" class="form-grid">
+                <div class="input-group">
+                    <label>Fecha</label>
+                    <input type="date" required>
+                </div>
+                <div class="input-group">
+                    <label>Hora</label>
+                    <input type="time" required>
+                </div>
+                <div class="input-group full-width">
+                    <label>Especialista</label>
+                    <select required>
+                        <option value="">Selecciona un profesional...</option>
+                        <option>Juan Pérez - Consultor</option>
+                        <option>María López - Diseñadora</option>
+                    </select>
+                </div>
+                <div class="input-group full-width">
+                    <label>Motivo de la cita</label>
+                    <textarea rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
+                </div>
+                <button type="submit" class="btn-confirm">Confirmar Cita</button>
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>
